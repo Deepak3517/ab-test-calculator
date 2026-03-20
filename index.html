@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A/B Test Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1> A/B Test Calculator</h1>
+    <p>Check if your experiment results are statistically significant</p>
+</header>
+
+<main>
+    <select id="significance">
+        <option value="0.10">90% Confidence</option>
+        <option value="0.05">95% Confidence</option>
+        <option value="0.01">99% Confidence</option>
+    </select>
+
+    <section>
+        <h3>Control (A)</h3>
+        <label for="control-visitors">Visitors</label>
+        <input type="number" id="control-visitors" placeholder="e.g. 10000" />
+        <label for="control-conversion">Conversions</label>
+        <input type="number" id="control-conversion" placeholder="e.g. 540" />
+    </section>
+
+    <section>
+        <h3>Variant (B)</h3>
+        <label for="variant-visitors">Visitors</label>
+        <input type="number" id="variant-visitors" placeholder="e.g. 10000" />
+        <label for="variant-conversion">Conversions</label>
+        <input type="number" id="variant-conversion" placeholder="e.g. 588" />
+    </section>
+
+    <section id="results">
+        <h3>Results</h3>
+        <p>Z-Score: <span id="z-score">-</span></p>
+        <p>P-value: <span id="p-value">-</span></p>
+        <p>CI: <span id="ci">-</span></p>
+        <p>Verdict: <span id="verdict">-</span></p>
+    </section>
+<button onclick="calculate()">Calculate</button>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
